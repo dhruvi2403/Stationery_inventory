@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System;
 
 namespace Stationery_Inventory.Admin
 {
@@ -11,7 +6,16 @@ namespace Stationery_Inventory.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["RoleId"] == null || Convert.ToInt32(Session["RoleId"]) != 1)
+            {
+                Response.Redirect("../User/Login.aspx");
+            }
+        }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("../User/Login.aspx");
         }
     }
 }

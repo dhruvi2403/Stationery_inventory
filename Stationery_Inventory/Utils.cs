@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -11,12 +11,6 @@ namespace Stationery_Inventory
 
     public class Utils
     {
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataAdapter sda;
-        SqlDataReader sdr;
-        DataTable dt;
-
         public static string getConnection()
         {
             return ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
